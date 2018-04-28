@@ -1,7 +1,6 @@
 import * as fs from "fs";
 import { join } from "path";
 import pify = require("pify");
-import * as readLine from "readline";
 import seedrandom = require("seedrandom");
 
 // The entropy/complexity/strength of the passwords in bits
@@ -41,7 +40,6 @@ function readWordList(path: string): Promise<string[]> {
 }
 
 function getRelativeWordFrequency(word: string, rank: number): number {
-    // return 1 /*/ Math.sqrt(word.length + 1)*/ / (15 + rank);
     return 1 / Math.sqrt(word.length + 1) / (25 + rank);
 }
 
