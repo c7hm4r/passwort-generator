@@ -131,9 +131,10 @@ function removeWords(
 }
 
 async function main(): Promise<void> {
-    const origPath = join(__dirname, "derewo-v-ww-bll-320000g-2012-12-31-1.0.txt");
-    const excludedWordsPath = join(__dirname, "derewoExcluded.txt");
-    const destPath = join(__dirname, "derewoGrundformlisteClean.txt");
+    const cwd = process.cwd();
+    const origPath = join(cwd, "derewo-v-ww-bll-320000g-2012-12-31-1.0.txt");
+    const excludedWordsPath = join(cwd, "derewoExcluded.txt");
+    const destPath = join(cwd, "derewoGrundformlisteClean.txt");
 
     const derewoData = await readDerewoGrundformList(origPath);
     const remainingWords = await removeWords(derewoData.words, excludedWordsPath);
