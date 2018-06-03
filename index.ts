@@ -14,6 +14,7 @@ function readWordList(path: string): Promise<string[]> {
         fs.readFile(path, "utf8", (err, data) => {
             if (err) {
                 reject(err);
+                return;
             }
             const wordRE = new RegExp(/^[-a-z0-9]+$/);
             const words = data
@@ -163,7 +164,7 @@ function mapFrequencyFunction(
 
 async function main(): Promise<void> {
     const random = seedrandom();
-    const listPath = join(__dirname, "derewoGrundformlisteClean.txt");
+    const listPath = join(process.cwd(), "derewoGrundformlisteClean.txt");
 
     const textWordList = mapFrequencyFunction(
         getRelativeWordFrequency,
