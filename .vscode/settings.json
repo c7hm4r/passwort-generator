@@ -1,2 +1,6 @@
 {
+    "[plaintext]": {
+        "editor.fontFamily": "'Droid Sans Mono', 'monospace', monospace, 'Droid Sans Fallback'",
+        "editor.minimap.enabled": true
+    }
 }

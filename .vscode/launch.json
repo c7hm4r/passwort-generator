@@ -5,11 +5,32 @@
     "version": "0.2.0",
     "configurations": [
         {
-            "name": "Main",
             "type": "node",
             "request": "launch",
-            "args": ["./index.ts"],
-            "runtimeArgs": ["--nolazy", "-r", "ts-node/register"],
+            "name": "Main JS",
+            "program": "${workspaceFolder}/build/index.js",
+            "preLaunchTask": "npm build-js",
+            "env": {
+                "NODE_ENV": "production"
+            },
+            "sourceMaps": true,
+            "runtimeArgs": [
+                "--prof"
+            ],
+            "cwd": "${workspaceFolder}"
+        },
+        {
+            "name": "Main TS",
+            "type": "node",
+            "request": "launch",
+            "args": [
+                "./index.ts"
+            ],
+            "runtimeArgs": [
+                "--nolazy",
+                "-r",
+                "ts-node/register"
+            ],
             "sourceMaps": true,
             "cwd": "${workspaceRoot}",
             "protocol": "inspector",
@@ -18,8 +39,14 @@
             "name": "Current TS File",
             "type": "node",
             "request": "launch",
-            "args": ["${relativeFile}"],
-            "runtimeArgs": ["--nolazy", "-r", "ts-node/register"],
+            "args": [
+                "${relativeFile}"
+            ],
+            "runtimeArgs": [
+                "--nolazy",
+                "-r",
+                "ts-node/register"
+            ],
             "sourceMaps": true,
             "cwd": "${workspaceRoot}",
             "protocol": "inspector",

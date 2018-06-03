@@ -5,7 +5,10 @@
   "main": "index.ts",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "debug": "ts-node index.ts"
+    "debug": "ts-node index.ts",
+    "build-js": "tsc",
+    "run": "tsc && NODE_ENV=production node build/index.js",
+    "profile": "tsc && cross-env NODE_ENV=production node --prof build/index.js"
   },
   "author": "Christoph Müller <iblzm@hotmail.de>",
   "license": "MIT",
@@ -13,7 +16,8 @@
   "devDependencies": {
     "ts-node": "^5.0.0",
     "tslint": "^5.9.1",
-    "typescript": "^2.7.2"
+    "typescript": "^2.7.2",
+    "cross-env": "^5.1.6"
   },
   "dependencies": {
     "@types/node": "^9.4.6",
