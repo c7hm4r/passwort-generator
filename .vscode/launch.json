@@ -9,7 +9,7 @@
             "request": "launch",
             "name": "Main JS",
             "program": "${workspaceFolder}/build/index.js",
-            "preLaunchTask": "npm build-js",
+            "preLaunchTask": "npm build",
             "env": {
                 "NODE_ENV": "production"
             },
