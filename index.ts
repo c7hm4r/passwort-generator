@@ -1,6 +1,5 @@
 import * as fs from "fs";
 import { join } from "path";
-import pify = require("pify");
 import seedrandom = require("seedrandom");
 
 // The entropy/complexity/strength of the passwords in bits

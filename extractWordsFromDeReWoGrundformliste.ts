@@ -1,7 +1,6 @@
 import * as fs from "fs";
 import { join } from "path";
 import pify = require("pify");
-import seedrandom = require("seedrandom");
 
 const specialLetterReplacements = [
     { orig: "ä", dest: "ae" },
