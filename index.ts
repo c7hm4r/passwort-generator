@@ -3,7 +3,7 @@ import { join } from "path";
 import seedrandom = require("seedrandom");
 
 // The entropy/complexity/strength of the passwords in bits
-const targetComplexityBits = 70;
+const targetComplexityBits = 75;
 
 // Size of the password list
 const passwordChoiseLength = 50;
